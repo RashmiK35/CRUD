@@ -3,11 +3,15 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const UserModel = require('./models/Users')
 
+PORT = 3001
+
 const app = express()
 app.use(cors())
 app.use(express.json())
 
 mongoose.connect("mongodb://127.0.0.1:27017/crud")
+
+
 
 app.get('/', (req, res) => {
     UserModel.find({})
@@ -25,7 +29,10 @@ app.get('/getUser/:id',(req, res) => {
 app.put('/updateUser/:id', (req, res) => {
     const id = req.params.id;
     UserModel.findByIdAndUpdate({_id:id}, {
-        name: req.body.name, 
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        email: req.body.email,
+        phonenumber: req.body.phonenumber,
         age: req.body.age, 
         city: req.body.city})
     .then(users => res.json(users))
@@ -45,7 +52,7 @@ app.post("/createUser",(req, res) => {
     .catch(err => res.json(err))
 })
 
-app.listen(3001, () => {
+app.listen(PORT, () => {
     console.log("Server is Running")
 })
 
