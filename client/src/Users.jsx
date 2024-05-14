@@ -69,15 +69,15 @@ function Users () {
             <button style={{ marginBottom:'15px',marginTop:'10px',marginLeft: '12px' }} className='btn btn-outline-light ml-2' onClick={toggleSortDirection}>
                 {sortDirection === 'asc' ? 'Sort Descending' : 'Sort Ascending'}
             </button>
-    <input
+        <input
         type="text"
         value={searchQuery}
         onChange={handleSearchChange}
         placeholder="Search by first name..."
         className="form-control mt-3"
         style={{ width: '400px', marginLeft:'890px',marginBottom: '15px', borderRadius: '20px' }}
-    />
-</div>
+        />
+        </div>
 
                 <table className="table" style={{ width: '100%', tableLayout: 'fixed' }}>
                     <thead style={{ position: 'sticky', top: 0 }}>
@@ -86,7 +86,7 @@ function Users () {
                             <th style={{ backgroundColor: 'black', color: 'white' }}>Last Name</th>
                             <th style={{ backgroundColor: 'black', color: 'white' }}>Email</th>
                             <th style={{ backgroundColor: 'black', color: 'white' }}>Phone Number</th>
-                            <th style={{ backgroundColor: 'black', color: 'white' }}>Age</th>
+                            <th style={{ backgroundColor: 'black', color: 'white' }}>Age(in years)</th>
                             <th style={{ backgroundColor: 'black', color: 'white' }}>City</th>
                             <th style={{ backgroundColor: 'black', color: 'white' }}>Action</th>
                         </tr>
